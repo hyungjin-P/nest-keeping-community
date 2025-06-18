@@ -23,7 +23,44 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+ℹ️ℹ️ 본 파일에서는 firebase 및 인증키 연결 코드가 누락되었습니다. 구글 로그인, 이메일 발송 등의 코드는 작동하지 않습니다.
+
+
+🚩 취미활동 커뮤니티(백엔드)
+
+당시 영화, 애니, 피규어 시장의 커뮤니티 서비스 입니다. 인스타그램과 유사한 피드 게시물을 위주로 관리자 페이지에서 정보 전달을 위해 뉴스 페이지 같은 매거진 등의 기능을 개발하였으며, 1.5만명의 활성 유저를 관리하였습니다. 초기 aws 서비스의 lambda로 기획되어 개발되었으나 유지보수 기간 중 무료 클라우드 서버 인프라인 fly.io로 변경되었습니다.
+
+
+📌 프로젝트 개요
+
+목적: 예술계 기업을 효과적으로 소개하고 작가들을 모집하기 위한 반응형 웹사이트 개발
+
+개발 기간: 프론트 포함 전체 9개월 ~ 12개월 소요
+
+참여 인원: 4인 팀 프로젝트 (퍼블리싱/개발2/디자인)
+
+담당: 프론트 40%, 백엔드 70% 이상 담당.
+
+특징:
+
+NestJS 및 TypeORM 사용
+
+구동시 (http://localhost:3001/api-docs) 에서 Swagger를 통해 REST API 문서화
+
+일부 Join쿼리 등 복잡한 쿼리는 (/src/feed/feed.repository.ts) 파일처럼 직접 처리
+
+
+🚀 기술 스택
+
+영역	기술
+
+Frontend	Angular(HTML, SCSS, Typescript)
+
+Backend	Nest.js(Node.js)
+
+DB MySQL
+
+Hosting / Infra	AWS (Lambda, CloudFront, S3, Route53, RDS, SES 등) -> Fly.io(Lambda, cloudfont 부분 계승)
 
 ## Project setup
 
@@ -57,50 +94,6 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
-
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
-
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
-
-
-
-firebase 생략됨.
-email 송수신 및 파일 처리관련 AWS 사용은 /config/.env에 AWS SES 정보가 필요함.
-구글 로그인 주석처리
-
-과거 Join과 같은 데이터 조회는 feed.repository 처럼 QueryBuilder로 별도 작성.
