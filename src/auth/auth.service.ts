@@ -22,7 +22,7 @@ export class AuthService {
   constructor(
     @InjectRepository(UserRepository)
     private userRepository: UserRepository,
-    private jwtService: JwtService,
+    // private jwtService: JwtService,
     private configService: ConfigService,
     @InjectRepository(UserPictureRepository)
     private userPictureRepository: UserPictureRepository,
@@ -362,7 +362,8 @@ export class AuthService {
    * @param providedId
    */
   async createAccessToken(providedId: string): Promise<string> {
-    return this.jwtService.sign({ providedId });
+    // return this.jwtService.sign({ providedId });
+    return '';
   }
 
   /**
@@ -370,13 +371,14 @@ export class AuthService {
    * @param providedId
    */
   async createRefreshToken(providedId: string): Promise<string> {
-    return this.jwtService.sign(
-      { providedId },
-      {
-        secret: this.configService.get('JWT_REFRESH_SECRET'),
-        expiresIn: this.configService.get('JWT_REFRESH_EXPIRES_IN'),
-      },
-    );
+    // return this.jwtService.sign(
+    //   { providedId },
+    //   {
+    //     secret: this.configService.get('JWT_REFRESH_SECRET'),
+    //     expiresIn: this.configService.get('JWT_REFRESH_EXPIRES_IN'),
+    //   },
+    // );
+    return '';
   }
 
   /**

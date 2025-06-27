@@ -15,12 +15,12 @@ import { UserService } from '../user/user.service';
 @Module({
   imports: [
     PassportModule.register({ defaultStrategy: 'jwt' }),
-    JwtModule.register({
-      secret: 'ZmxleGlibGU=',
-      signOptions: {
-        expiresIn: 600 * 3,
-      },
-    }),
+    // JwtModule.register({
+    //   secret: 'key',
+    //   signOptions: {
+    //     expiresIn: 600 * 3,
+    //   },
+    // }),
     TypeOrmModule.forFeature([
       UserRepository,
       UserPictureRepository,
@@ -35,9 +35,13 @@ import { UserService } from '../user/user.service';
   providers: [
     AuthService,
     UserService,
-    JwtStrategy,
     CommonUtil,
+    // JwtStrategy,
   ],
-  exports: [JwtStrategy, PassportModule, AuthService],
+  exports: [
+    // JwtStrategy, 
+    PassportModule, 
+    AuthService
+  ],
 })
 export class AuthModule {}

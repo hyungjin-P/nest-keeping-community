@@ -38,9 +38,6 @@ export class FileEntity {
   // @Column({ nullable: true })
   // versionId: string;
 
-  @CreateDateColumn({
-    type: 'timestamp',
-    default: () => 'CURRENT_TIMESTAMP()',
-  })
+  @CreateDateColumn()
   createdAt: Date;
 }

@@ -28,9 +28,6 @@ export class FeedPicture {
   })
   feed: Feed;
 
-  @CreateDateColumn({
-    type: 'timestamp',
-    default: () => 'CURRENT_TIMESTAMP()',
-  })
+  @CreateDateColumn()
   createdAt: Date;
 }

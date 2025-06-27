@@ -24,9 +24,6 @@ export class FindFeedPictureEntity {
   })
   feed: FindFeedEntity;
 
-  @CreateDateColumn({
-    type: 'timestamp',
-    default: () => 'CURRENT_TIMESTAMP()',
-  })
+  @CreateDateColumn()
   created_at: Date;
 }

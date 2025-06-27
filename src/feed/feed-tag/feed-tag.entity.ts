@@ -29,9 +29,6 @@ export class FeedTag {
   })
   feed: Feed;
 
-  @CreateDateColumn({
-    type: 'timestamp',
-    default: () => 'CURRENT_TIMESTAMP()',
-  })
+  @CreateDateColumn()
   createdAt: Date;
 }
